@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Flip</title>
+</head>
+<body>
+
+  <script src="build/build.js"></script>
+
+  <p><input type="checkbox" name="x"> flip x</p>
+  <p><input type="checkbox" name="y"> flip y</p>
+  <canvas width=300 height=300></canvas>
+
+  <script>
+    var flip = require('flip');
+
+    var x = document.querySelector('input[name=x]');
+    var y = document.querySelector('input[name=y]');
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext('2d');
+
+    function draw(x, y) {
+      canvas.width = canvas.width;
+      ctx.save();
+      ctx.strokeRect(0, 0, 300, 300);
+      flip(canvas, x, y);
+      ctx.strokeRect(50, 50, 50, 50);
+      ctx.strokeRect(125, 125, 25, 25);
+      ctx.restore();
+    }
+
+    draw(false, false);
+
+    x.onchange = function(e){
+      draw(x.checked, y.checked);
+    };
+
+    y.onchange = function(e){
+      draw(x.checked, y.checked);
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "flip-component",
+  "description": "Canvas flip utility",
+  "version": "1.0.0",
+  "keywords": ["canvas", "flip"],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "component": {
+    "scripts": {
+      "flip/index.js": "index.js"
+    }
+  }
+}
